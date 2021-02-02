@@ -20,6 +20,10 @@ For our unit03 project, we are creating a clone of the popular productivity app 
 
 For this project, I am creating an app that allows an administrator to login, create a quiz and assign point values to each question, distribute the quiz to other users, automatically grade each quiz, and have a running tally of points accrued based on each quiz answer. Regular users will be able to login, enter their name, see the quiz that the administrator distributed, answer each question, receive results, and see their total points based on the administrators point distribution.
 
+
+## Repos Used for Inspiration
+- https://github.com/heroku/mobile-template1
+
 ## Wireframes
 
 - [Wireframe]()
