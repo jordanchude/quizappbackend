@@ -2,7 +2,7 @@
 
 ## Project Link
 
-- [Link](https://telloapp.netlify.app/)
+- [Link]()
 
 ## Project Schedule
 |  Day | Deliverable | Status
@@ -18,27 +18,22 @@
 
 For our unit03 project, we are creating a clone of the popular productivity app [Trello](https://trello.com/). Users sign up and login with a custom username and password and then are taken to a mobile, tablet, and desktop application where they can add a board. In each board, they can add a card that holds a list of items tied to the specified card. Each user utilizes CRUD (i.e. create, read, update, and delete) functionality to manipulate each card and/or board on a backend server created and maintained by Ruby on Rails and SQL. 
 
-## Google Sheet
-
-- [Sheet](https://docs.google.com/spreadsheets/d/1GKj0dpDS6maIhMR8e5oU5CzS_rvlJuWESEXH36iDz6Q/edit#gid=0)
+For this project, I am creating an app that allows an administrator to login, create a quiz and assign point values to each question, distribute the quiz to other users, automatically grade each quiz, and have a running tally of points accrued based on each quiz answer. Regular users will be able to login, enter their name, see the quiz that the administrator distributed, answer each question, receive results, and see their total points based on the administrators point distribution.
 
 ## Wireframes
 
-- [Wireframe](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1598061926/Screen_Shot_2020-08-21_at_10.04.40_PM_zs3paq.png)
+- [Wireframe]()
 
 ## Time/Priority Matrix 
 
-- [MVP](https://res.cloudinary.com/dpjdvsigb/image/upload/v1598754705/project-3-assets/backend-mvp_ldjr1t.jpg)
-- [Post MVP](https://res.cloudinary.com/dpjdvsigb/image/upload/v1598755486/project-3-assets/backend-post-mvp_vvcssp.jpg)
+- [MVP]()
+- [Post MVP]()
 
 ### MVP/PostMVP - 5min
 
 #### MVP
 
-- Proper authentication and authorization for login
-- Make model and migration files for user, board, and items
-- Create relevant CRUD functionalities for user, board, and items through controllers/routes
-- Test all routes for proper functionality
+- Authentication and authorization for administrative and user login
 - Deploy to Heroku
 
 #### PostMVP 
@@ -84,55 +79,14 @@ For our unit03 project, we are creating a clone of the popular productivity app 
 | - | Total | - | 16hrs| 1hrs |
 
 ## Additional Libraries
-- [Ruby](https://www.ruby-lang.org/en/)
-- [Rails](https://rubyonrails.org/)
-- [PG](https://www.npmjs.com/package/pg)
-- [Puma](https://www.npmjs.com/package/puma)
-- [BCrypt](https://www.npmjs.com/package/bcrypt)
-- [Bootsnap](https://github.com/Shopify/bootsnap)
-- [Rack-Cors](https://www.npmjs.com/package/cors)
-- [JWT](https://jwt.io/)
-- [Dotenv-Rails](https://rubygems.org/gems/dotenv-rails/versions/2.1.1)
-- [ByeBug](https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-byebug-gem)
-- [Listen](https://github.com/guard/listen)
-- [Spring](https://github.com/rails/spring)
-- [Spring-Watcher-Listen](https://github.com/jonleighton/spring-watcher-listen)
-- [Tzinfo-Data](https://github.com/tzinfo/tzinfo-data)
+- TBD
 
 ## Code Snippet
 
-To show all the items from one list of a board, the query began from most outer level which was the board down to the particular item. In order to query for a single list under the board and a single item under that list, the ids of the board_id and list_id were needed. To accomplish that, the ids were taken from the result of the board query and list query. However, since each of the queries returned an array of one object, bracket notation was used to access the object before accessing each of the ids of each the selected board and list objects. By gaining the ids for the queries in a top-down approach, all the items of a list of a board could be displayed. 
 
-```
-def index
-    @one_board = Board.where(:id => params[:board_id],:user_id => @user.id) #asking for the id that matches the board id
-    if @one_board.present?
-      @one_list = List.where(:board_id => @one_board[0].id, :id => params[:list_id]) #gets one of the lists from our single board id
-      if @one_list.present?
-        @all_items = Item.where(:list_id => @one_list[0].id) #All the items from the one list.
-        if @all_items.empty?
-          render :json => {
-              :response => "There are no items in this list"
-          }
-        else
-          render :json =>  @all_items
-        end
-      else
-        render :json => {
-            :response => "This list does not exist in this board. Failed to find the items in this list."
-        }
-      end
-    else
-      render :json => {
-          :response => "This board does not exist"
-      }
-    end
-  end
-```
 
 ## Issues and Resolutions
 
 **ERROR**: 
-There was a continuous error during deployment when Heroku attempted to bundle install: ```/usr/bin/env: 'ruby\r': No such file or directory```    
                      
-**RESOLUTION**: Every file of the rails app was searched to find the ruby\r. After exhaustive search of the files, the ruby\r could not be found. This error may have possibly stem from the different operating systems the team used, and so git push and pull across the team could have generated an unknown ruby\r somewhere. To avoid this, a new repo was made by one member, and the code that was produced from the team was extracted into this repo to successfully deploy the backend.
+**RESOLUTION**: 
